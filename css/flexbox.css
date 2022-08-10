@@ -1,0 +1,155 @@
+/*Teníamos tres puntos a tratar y el primero era que los elementos, cuando iniciamos a trabajar con nuestro código, 
+estaban uno debajo del otro. Con la técnica de Flexbox conseguimos colocar los elementos uno del lado de otro, 
+ahora ese fue nuestro primer elemento. Utilizamos eso en la línea de código recordando que tendríamos que 
+siempre utilizar una etiqueta padre con unos elementos internos. En este caso fue container.
+ Y vamos a trabajar los elementos internos de ese container, en el caso logo y menú. Al colocar el display flex se les 
+ van a quedar, se les quedaron colocados de un lado a otro. 
+ Luego para nuestra segunda necesidad era colocar los elementos alineados verticalmente. Para ello utilizamos el align-items: center; 
+ con esta clase conseguíamos que los elementos quedaran alineados justamente en el medio. 
+Entonces utilizamos la función que viene como parte de Flexbox, que es la de justify-content: space-between; que quiere decir espacio entre los elementos
+
+
+--------------------------------------------------------------------------------------------
+ 
+Podemos distribuir los elementos dentro del padre de varias maneras, podemos por ejemplo:
+
+Poner todo el espacio a la izquierda, lanzando el contenido a la derecha con justify-content: flex-end.
+
+Poner todo el espacio a la derecha, lanzando el contenido a la izquierda con justify-content: flex-start (que es el modelo).
+
+Poner todo el espacio a la izquierda y a la derecha, lanzando el contenido al centro con justify-content: center.
+
+Poner todo el espacio entre los elementos como vimos antes con justify-content: space-between.
+
+Y una posibilidad muy interesante es también poner espacio alrededor de los elementos. Para ello podemos utilizar justify-content: space-around.*/
+
+
+.headerPrincipal .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.headerPrincipal-nav {
+    display: flex;
+
+}
+
+.rodapePrincipal-patrocinadores .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.rodapePrincipal-patrocinadores-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 70%;
+    margin-right: 5%;
+}
+
+.rodapePrincipal-contatoForm {
+    width: 25%;
+}
+
+.rodapePrincipal-contatoForm-fieldset {
+    display: flex;
+}
+
+.rodapePrincipal-navMap-list {
+    display: flex;
+    flex-direction: column;
+    /*por defecto display flex viene con un flex direction row* acá lo cambiamos a column*/
+    height: 260px;
+    /*ponemos una altura maxima para la columna*/
+    flex-wrap: wrap;
+    /*cuando llega a 250px va a la column siguiente*/
+}
+
+.contenidoPrincipal-cursos {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.contenidoPrincipal-cursos-link {
+    display: flex;
+    width: 23%;
+}
+
+.videoSobre .container {
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.videoSobre-sobre {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.videoSobre-video {
+    flex-grow: 1;
+    flex-shrink: 2;
+    margin-right: 20px;
+}
+
+.videoSobre-sobre-list {
+    flex-grow: 2;
+}
+
+/* Responsive */
+@media (max-width:768px) {
+
+
+    .headerPrincipal .container {
+        flex-direction: column;
+        align-items: initial;
+        text-align: center;
+    }
+
+    .headerPrincipal-nav {
+        flex-direction: column;
+    }
+
+    .contenidoPrincipal-cursos {
+        flex-direction: column;
+
+    }
+
+    .contenidoPrincipal-cursos-link {
+        width: 100%;
+    }
+
+    .rodapePrincipal-navMap-list {
+        height: auto;
+        flex-wrap: nowrap;
+    }
+
+    .rodapePrincipal-patrocinadores .container {
+        flex-direction: column;
+    }
+
+    .rodapePrincipal-contatoForm {
+        width: 100%;
+    }
+
+    .rodapePrincipal-patrocinadores-list {
+        align-items: center;
+        width: 100%;
+        margin: 0;
+    }
+
+    .rodapePrincipal-contatoForm-fieldset {
+        justify-content: center;
+    }
+
+    .headerPrincipal-nav-link-app {
+        order: -1;
+    }
+
+    .videoSobre .container {
+        flex-direction: column;
+    }
+}
